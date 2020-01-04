@@ -1,21 +1,40 @@
 $editor-background: #1a1a1a;
 $editor-text: lightskyblue;
+$editor-preview-height: 94vh;
 
-.App {
-  width: 100%;
-  height: 100%;
+* {
+  box-sizing: border-box;
+}
+
+#root {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: auto;
+  grid-template-columns: 50vw 50vw;
+  grid-template-rows: 6vh $editor-preview-height;
+  grid-template-areas:
+    "header header"
+    "editor preview";
+}
+
+header {
+  grid-area: header;
+  padding-left: 50px;
+
+  h1 {
+    font-size: 1em;
+  }
 }
 
 #editor {
+  grid-area: editor;
   background-color: $editor-background;
   color: $editor-text;
-  height: 100vh;
+  height: $editor-preview-height;
   padding: 0.5em;
 }
 
 #preview {
+  grid-area: preview;
   background-color: white;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }

@@ -1,14 +1,16 @@
 import React from 'react';
 import './App.scss';
-import Editor from './Editor';
-import Previewer from './Previewer';
+import Editor from './components/Editor';
+import Previewer from './components/Previewer';
+import Header from './components/Header';
 
 function App() {
   return (
-    <div className="App">
+    <React.Fragment>
+      <Header />
       <Editor />
       <Previewer />
-    </div>
+    </React.Fragment>
   );
 }
 
