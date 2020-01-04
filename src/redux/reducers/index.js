@@ -1,7 +1,8 @@
 import {UPDATE_MARKDOWN} from '../actionTypes';
 
+// placeholder state, actual intial state in ../store.js
 const initalState = {
-    markdown: "Something is up"
+    markdown: ""
 };
 
 export default function markdown(state = initalState, action) {
