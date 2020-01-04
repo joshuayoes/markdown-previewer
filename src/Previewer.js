@@ -1,9 +1,17 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
-export default function Previewer() {
+const Previewer = (props) => {
     return (
         <section id="preview">
-            This is the Previewer
+            {props.markdown}
         </section>
     )
 }
+
+const mapStateToProps = (state) => {
+    const { markdown } = state;
+    return { markdown }
+}
+
+export default connect(mapStateToProps)(Previewer);

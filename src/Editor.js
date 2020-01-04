@@ -1,9 +1,19 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import { updateMarkdown } from './redux/actions'
 
-export default function Editor() {
+const Editor = ({ dispatch }) => {
+    
+    const handleChange = (event) => {
+        const {value} = event.target
+        dispatch(updateMarkdown(value))
+    }
+
     return (
-        <textarea id="editor">
-            This is some markdown
+        <textarea id="editor" onChange={handleChange}>
+            
         </textarea>
     )
 }
+
+export default connect()(Editor);
