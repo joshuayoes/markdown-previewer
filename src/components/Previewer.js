@@ -8,7 +8,7 @@ marked.setOptions({
 
 const Previewer = (props) => {
     return (
-        <section id="preview" class='markdown-body' dangerouslySetInnerHTML={{__html: props.markdown}}>
+        <section id="preview" className='markdown-body' dangerouslySetInnerHTML={{__html: props.markdown}}>
         </section>
     )
 }

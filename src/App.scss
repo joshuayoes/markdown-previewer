@@ -1,6 +1,8 @@
 $editor-background: #1a1a1a;
 $editor-text: lightskyblue;
 $editor-preview-height: 94vh;
+$header-background: #323233;
+$header-text: #d1d1d1;
 
 * {
   box-sizing: border-box;
@@ -17,10 +19,42 @@ $editor-preview-height: 94vh;
 
 header {
   grid-area: header;
-  padding-left: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $header-background;
+  color: $header-text;
 
   h1 {
-    font-size: 1em;
+    font-size: 1.5em;
+    padding: 10px;
+
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Likely future */
+  }
+
+  .credits {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  svg {
+    padding: 2px;
+    margin: 0 5px;
   }
 }
 
@@ -30,6 +64,12 @@ header {
   color: $editor-text;
   height: $editor-preview-height;
   padding: 0.5em;
+  resize: none;
+  border: none;
+}
+
+#editor:focus {
+  outline: 1px $editor-background;
 }
 
 #preview {
