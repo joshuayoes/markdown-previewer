@@ -1,7 +1,7 @@
 import { createStore } from 'redux'
 import rootReducer from './reducers/index';
 
-const initalMarkdown = 
+const defaultMarkdown = 
 `# Heading 1 
 ## Heading 2
 
@@ -24,8 +24,18 @@ Code blocks
 
 ![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)`;
 
+const previousSession = localStorage.getItem('previousSession');
+
+let initalStateMarkdown;
+
+if (previousSession === null) {
+    initalStateMarkdown = defaultMarkdown
+} else {
+    initalStateMarkdown = previousSession
+}
+
 const initialState = {
-    markdown: initalMarkdown
+    markdown: initalStateMarkdown
 }
 
 export default createStore(

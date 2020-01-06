@@ -9,6 +9,7 @@ export default function markdown(state = initalState, action) {
     switch (action.type) {
         case UPDATE_MARKDOWN: 
             const {markdown} = action
+            localStorage.setItem('previousSession', markdown);
             return {
                 markdown
             }
