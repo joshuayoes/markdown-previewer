@@ -3,7 +3,7 @@
 A live markdown editor for GitHub repositories
 
 Deployed live at:
-https://markdown-previewer-1wt9yrw8m.now.sh/
+https://markdown-previewer-5iy3fjarq.now.sh/
 
 ## Commands
 
